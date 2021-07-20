@@ -25,7 +25,7 @@ namespace katas.dig_pow
         public static long digPow(int n, int p)
         {
             var powerAccumulate = n.ToString()
-                .Select(x => int.TryParse(x.ToString(), out var number) ? number : (int?)null)
+                .Select(x => int.TryParse(x.ToString(), out var number) ? number : (int?) null)
                 .Where(x => x.HasValue)
                 .Select(x => x.Value)
                 .Select((x, index) => Math.Pow(x, p + index))
